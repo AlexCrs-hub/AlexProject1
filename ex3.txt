@@ -1,0 +1,23 @@
+function merge(a, b){
+
+  var res;
+
+  res = {...a, ...b};
+
+  return res;
+}
+
+let obj1 = {
+  a: 1,
+  b: 2,
+  f:6
+};
+
+let obj2 = {
+  c: 3,
+  d: 4
+};
+
+let obj3 = merge(obj1, obj2);
+
+console.log(obj3);

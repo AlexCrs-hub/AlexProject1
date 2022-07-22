@@ -1,0 +1,13 @@
+const request = "https://dog.ceo/api/breeds/image/random";
+fetch(request).then((res) => {
+  console.log("yup", res);
+})
+.catch((error) => {
+  console.log(error);
+})
+
+const asyncFunc = async () => {
+       const res = await fetch("https://dog.ceo/api/breeds/image/random");
+       console.log("res",res);
+};
+asyncFunc();

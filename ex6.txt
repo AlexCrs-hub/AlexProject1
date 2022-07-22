@@ -1,0 +1,24 @@
+function isArmstrong(nr){
+  
+  let res = false;
+
+  let sum = 0;
+
+  let aux = nr;
+  let n = nr.toString().length;
+  for(let i = 0; i < n; i++){
+    sum += Math.pow(aux%10,n);
+    console.log(aux%10);
+    aux /= 10;
+    aux = Math.floor(aux);
+  }
+
+  if(sum === nr){
+    res = true;
+  }
+
+  return res;
+}
+
+let nr = 153;
+console.log(isArmstrong(nr));

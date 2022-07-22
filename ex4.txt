@@ -1,0 +1,21 @@
+function groupAlphabetically(ss){
+
+  let alphabet = {};
+  let arr = [];
+  for( let value in ss){
+
+    arr.push(ss[value][0]);
+
+  }
+  let s = new Set(arr);
+  s.forEach((value) => {
+    let arrAlph = ss.filter( (word) => word[0] === value);
+    console.log(arrAlph);
+    alphabet[value] = arrAlph;
+  });
+  return alphabet;
+}
+
+let s = ["Alf","Alice", "Ben"];
+let obj = groupAlphabetically(s);
+console.log(obj);

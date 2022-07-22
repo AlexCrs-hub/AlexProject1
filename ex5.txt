@@ -1,0 +1,29 @@
+class CustomList{
+  constructor(arr){
+    this.arr = arr;
+  }
+  
+  insertFirst(a){
+    this.arr.reverse();
+    this.arr.push(a);
+    this.arr.reverse();
+  }
+
+  insertLast(a){
+    this.arr.push(a);
+  }
+
+  getFirst(){
+    return this.arr[0];
+  }
+
+  getLast(){
+    return this.arr[this.arr.length - 1]
+  }
+
+}
+
+let v = new CustomList([2,3,4]);
+v.insertFirst(1);
+v.insertLast(5);
+console.log(v.getFirst());
