@@ -1,30 +1,40 @@
 function check(objs){
+    
     let objsN = [];
+
     objs.forEach(obj => {
+
         if(obj.date != null && obj.to.length != 0){
             objsN.push(obj);
         }
+
     })
     return objsN;
 }
 
 function getMonths(objs){
     let months = [];
+
     for(let key in objs){
+
         let d = new Date(objs[key].date);
         let month = d.toLocaleString("default", {month: "long"});
 
         months.push(month);
     }
+
     let uniqueMs = new Set(months);
+
     return uniqueMs;
 }
 
 function fill(days){
     let arr = [];
+
     for(let i = 1; i <= days; i++){
         arr.push(i);
     }
+
     return arr;
 }
 
@@ -33,19 +43,24 @@ function fillMonth(objs, currentMonth, nrDays, names){
     let timeStamp = [];
 
     names.forEach( elem => {
+
         let currentObjs = objs.filter( obj => obj.from === elem);
         let time = "";
+
         currentObjs = currentObjs.filter( obj => new Date(obj.date).toLocaleString("default",{month:"long"}) === currentMonth);
 
         let mailDays = [];
 
         currentObjs.forEach(curr => {
+
             mailDays.push(new Date(curr.date).getDate());
+
         });
 
         let mD = new Set(mailDays);
 
         nrDays.forEach(day => {
+
             if(mD.has(day)){
                 time += "==";
             }
